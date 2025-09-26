@@ -9,15 +9,26 @@ class CarPriceEstimator:
         """
         return self.theta0 + (self.theta1 * mileage)
 
+    def header(self):
+        print("*--------------------------------------------------*")
+        print("| Estimate the price of a car based on its mileage |")
+        print("*--------------------------------------------------*")
+
+    def get_mileage(self) -> float:
+        self.header()
+        mileage = float(input("Enter the car's mileage: "))
+        return mileage
 
 def main():
     theta0 = 0
     theta1 = 0
     estimator = CarPriceEstimator(theta0, theta1)
-    mileage = float(input("Enter the car's mileage: "))
+    estimator.header()
+    mileage = estimator.get_mileage()
     price = estimator.estimate_price(mileage)
     print(f"Estimated price for a car with {mileage} km: {price:.2f} €")
 
 
 if __name__ == "__main__":
     main()
+
