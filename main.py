@@ -7,9 +7,11 @@ def main():
     if len(sys.argv) != 2:
         print("Usage: python main.py <path/to/file.csv>")
         sys.exit(1)
-    trainer(sys.argv[1])
     input_km = input("Enter the car's mileage : ")
-    price = estimate_price(float(input_km), 0.0, 0.0)
+    trainer(sys.argv[1])
+    theta0 = 0
+    theta1 = 0
+    price = estimate_price(float(input_km), float(theta0), float(theta1))
     print(f"Estimated price for a car with {input_km} km : {price:.2f} €")
 
 
