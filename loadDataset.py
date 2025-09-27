@@ -4,11 +4,8 @@ from pathlib import Path
 
 
 def load_dataset(csv_path: str) -> pd.DataFrame:
-    """Charge un dataset depuis un fichier CSV.
-    Args:
-        csv_path (str): Chemin vers le fichier CSV
-    Returns:
-        pd.DataFrame: Le dataset chargé
+    """Loading dataset from a file CSV.
+    Take file path as argument and return a pandas DataFrame.
     """
     path = Path(csv_path)
     if not path.exists():

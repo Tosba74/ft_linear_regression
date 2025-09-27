@@ -52,6 +52,8 @@ def main():
     estimator.load_thetas()
     mileage = estimator.get_mileage()
     price = estimator.estimate_price(mileage)
+    if price < 0:
+        price = 0
     print(f"Estimated price for a car with {mileage} km: {price:.2f} €")
 
 
